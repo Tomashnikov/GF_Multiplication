@@ -1,11 +1,11 @@
-#define _GLIBCXX_USE_CXX11_ABI 0
 #include <iostream>
 #include <string>
 #include <vector>
 #include <cstdlib>
 #include <cstdio>
+#include "commonResources.h"
 
-
+int galoisFieldSize = 0;
 
 std::vector<int> addition(std::vector<int> a, std::vector<int> b);
 void multiplication(std::vector<int> a, std::vector<int> b);
@@ -21,15 +21,17 @@ int main(int argc, char *argv[]) {
 
 	std::cout << "GF(2) Calculator" << std::endl;
 
-	if (argc<2) {
-		std::cout << "Prosze podac liczbe A i B ponizej:" << std::endl;
+	if (argc<3) {
+		std::cout << "Prosze podac liczby A i B, oraz rozmiar ciala Galois w polach ponizej:" << std::endl;
 		std::cout << "\n\t A = "; std::cin >> firstNumber;
 		std::cout << "\t B = "; std::cin >> secondNumber;
+		std::cout << "\t m = "; std::cin >> galoisFieldSize;
 
 	}
 	else {
 		firstNumber = argv[1];
 		secondNumber = argv[2];
+		galoisFieldSize = atoi(argv[3]);
 	}
 
 	firstNumberLength = firstNumber.length();
@@ -92,8 +94,9 @@ int main(int argc, char *argv[]) {
 
 
 	multiplication(fnVector, snVector);
+	cout << "\nkoniec";
 
-std:cout << std::endl;
+	std::cout << std::endl;
 
 	return 0;
 }
