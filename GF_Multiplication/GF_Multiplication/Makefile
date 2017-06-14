@@ -1,6 +1,10 @@
 gfmultiplication: main.cpp modulus.cpp multiplication.cpp addition.cpp
 	g++ -o gfmultiplication main.cpp modulus.cpp multiplication.cpp addition.cpp
-	echo "Compiling GFMultiplication"
+	@echo "Compiling GFMultiplication"
+
+
+test: gfmultiplication
+	./gfmultiplication 10110110101 1101110 14
 	
-@all:
-	echo "Done"
+all:
+	@echo "Test passed!"
