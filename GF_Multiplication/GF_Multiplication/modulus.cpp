@@ -12,7 +12,7 @@ std::vector<int> modulus(std::vector<int> a)
 	std::vector<int> solution;
 	std::string modulusString;
 
-	std::cout << "Prosze podac dzielnik modulo postaci zerojedynkowej nie mniejszy ni¿ " << a.size() << " :" << std::endl;
+	std::cout << "\nProsze podac dzielnik modulo postaci zerojedynkowej o stopniu  " << galoisFieldSize << " :" << std::endl;
 	std::cout << "\n\t A = "; std::cin >> modulusString;
 	modulusVector.resize(modulusString.length());
 
@@ -21,14 +21,14 @@ std::vector<int> modulus(std::vector<int> a)
 	}
 
 
-	std::cout << std::endl << "Modulus:\t\t";
+	std::cout << std::endl << "\tModulus:\t\t";
 	for (unsigned int x = 0; x < modulusString.length(); x++) {
 		std::cout << modulusVector[x];
 	}
 
 	do {
 		modulusVector.resize(a.size());
-		std::cout << "Nowy rozmiar modulu: " << modulusVector.size() << std::endl;
+		std::cout << std::endl << "Nowy rozmiar modulu: " << modulusVector.size() << std::endl;
 		
 		for (unsigned int x = 0; x < a.size(); x++) {
 			std::cout << a[x];

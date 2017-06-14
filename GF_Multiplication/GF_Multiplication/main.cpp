@@ -23,9 +23,9 @@ int main(int argc, char *argv[]) {
 
 	if (argc<3) {
 		std::cout << "Prosze podac liczby A i B, oraz rozmiar ciala Galois w polach ponizej:" << std::endl;
-		std::cout << "\n\t A = "; std::cin >> firstNumber;
-		std::cout << "\t B = "; std::cin >> secondNumber;
-		std::cout << "\t m = "; std::cin >> galoisFieldSize;
+		std::cout << "\n\tA = "; std::cin >> firstNumber;
+		std::cout << "\tB = "; std::cin >> secondNumber;
+		std::cout << "\tm = "; std::cin >> galoisFieldSize;
 
 	}
 	else {
@@ -45,9 +45,9 @@ int main(int argc, char *argv[]) {
 	else {
 		solutionLength = secondNumberLength;
 	}
-	std::cout << "\n\t Rozmiar GF = " << solutionLength << std::endl;
-	std::cout << "\tA = " << firstNumber << " B = " << secondNumber << std::endl;
-	std::cout << "\tlen(A) = " << firstNumberLength << " len(B) = " << secondNumberLength << std::endl;
+	std::cout << "\n\tRozmiar GF = " << galoisFieldSize << std::endl;
+	std::cout << "\tA = " << firstNumber << "\tB = " << secondNumber << std::endl;
+	std::cout << "\tlen(A) = " << firstNumberLength << "\tlen(B) = " << secondNumberLength << std::endl;
 
 
 
@@ -79,22 +79,21 @@ int main(int argc, char *argv[]) {
 
 	/*Funkcja dodaj¹ca A + B*/
 	solutionVector = addition(fnVector, snVector);
-	std::cout << endl << "Liczba A:\t\t";
+	std::cout << endl << "\tLiczba A:\t\t\t";
 	for (int x = 0; x < firstNumberLength; x++) {
 		std::cout << fnVector[x];
 	}
-	std::cout << endl << "Liczba B:\t\t";
+	std::cout << endl << "\tLiczba B:\t\t\t";
 	for (int x = 0; x < secondNumberLength; x++) {
 		std::cout << snVector[x];
 	}
-	std::cout << endl << "Wynik obl.:\t\t";
+	std::cout << endl << "\tWynik dodawania:\t\t";
 	for (int x = 0; x < solutionLength; x++) {
 		std::cout << solutionVector[x];
 	}
 
 
 	multiplication(fnVector, snVector);
-	cout << "\nkoniec";
 
 	std::cout << std::endl;
 
